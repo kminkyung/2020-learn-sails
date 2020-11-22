@@ -10,11 +10,11 @@ parasails.registerPage('welcome', {
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function() {
-    //…
+  beforeMount: function () {
+    // …
   },
-  mounted: async function() {
-    //…
+  mounted: async function () {
+    // …
   },
 
   //  ╦  ╦╦╦═╗╔╦╗╦ ╦╔═╗╦    ╔═╗╔═╗╔═╗╔═╗╔═╗
@@ -22,15 +22,15 @@ parasails.registerPage('welcome', {
   //   ╚╝ ╩╩╚═ ╩ ╚═╝╩ ╩╩═╝  ╩  ╩ ╩╚═╝╚═╝╚═╝
   // Configure deep-linking (aka client-side routing)
   virtualPagesRegExp: /^\/welcome\/?([^\/]+)?\/?/,
-  afterNavigate: async function(virtualPageSlug){
+  afterNavigate: async function (virtualPageSlug) {
     // `virtualPageSlug` is determined by the regular expression above, which
     // corresponds with `:unused?` in the server-side route for this page.
     switch (virtualPageSlug) {
       case 'hello':
-        this.modal = 'example';
-        break;
+        this.modal = 'example'
+        break
       default:
-        this.modal = '';
+        this.modal = ''
     }
   },
 
@@ -39,21 +39,21 @@ parasails.registerPage('welcome', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    clickOpenExampleModalButton: async function() {
-      this.goto('/welcome/hello');
+    clickOpenExampleModalButton: async function () {
+      this.goto('/welcome/hello')
       // Or, without deep links, instead do:
       // ```
       // this.modal = 'example';
       // ```
     },
 
-    closeExampleModal: async function() {
-      this.goto('/welcome');
+    closeExampleModal: async function () {
+      this.goto('/welcome')
       // Or, without deep links, instead do:
       // ```
       // this.modal = '';
       // ```
-    },
+    }
 
   }
-});
+})

@@ -21,7 +21,6 @@
 
 module.exports = {
 
-
   /**************************************************************************
   *                                                                         *
   * Tell Sails what database(s) it should use in production.                *
@@ -49,7 +48,7 @@ module.exports = {
     default: {
       // adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
-      //--------------------------------------------------------------------------
+      // --------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
       //  ||   sensitive credentials like `url` using an environment variable.
       //
@@ -57,7 +56,7 @@ module.exports = {
       //  ```
       //  sails_datastores__default__url=mysql://admin:myc00lpAssw2D@db.example.com:3306/my_prod_db
       //  ```
-      //--------------------------------------------------------------------------
+      // --------------------------------------------------------------------------
 
       /****************************************************************************
       *                                                                           *
@@ -72,11 +71,9 @@ module.exports = {
       ****************************************************************************/
       // ssl: true,
 
-    },
+    }
 
   },
-
-
 
   models: {
 
@@ -90,7 +87,7 @@ module.exports = {
     * https://sailsjs.com/docs/concepts/models-and-orm/model-settings#?migrate *
     *                                                                          *
     ***************************************************************************/
-    migrate: 'safe',
+    migrate: 'safe'
 
     /***************************************************************************
     *                                                                          *
@@ -105,8 +102,6 @@ module.exports = {
 
   },
 
-
-
   /**************************************************************************
   *                                                                         *
   * Always disable "shortcut" blueprint routes.                             *
@@ -118,10 +113,8 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   blueprints: {
-    shortcuts: false,
+    shortcuts: false
   },
-
-
 
   /***************************************************************************
   *                                                                          *
@@ -151,11 +144,9 @@ module.exports = {
       // allowOrigins: [
       //   'https://example.com',
       // ]
-    },
+    }
 
   },
-
-
 
   /***************************************************************************
   *                                                                          *
@@ -186,7 +177,7 @@ module.exports = {
     ***************************************************************************/
     // adapter: '@sailshq/connect-redis',
     // url: 'redis://user:password@localhost:6379/databasenumber',
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
     // /\   OR, to avoid checking it in to version control, you might opt to
     // ||   set sensitive credentials like this using an environment variable.
     //
@@ -195,9 +186,7 @@ module.exports = {
     // sails_session__url=redis://admin:myc00lpAssw2D@bigsquid.redistogo.com:9562/0
     // ```
     //
-    //--------------------------------------------------------------------------
-
-
+    // --------------------------------------------------------------------------
 
     /***************************************************************************
     *                                                                          *
@@ -222,12 +211,10 @@ module.exports = {
     ***************************************************************************/
     cookie: {
       // secure: true,
-      maxAge: 24 * 60 * 60 * 1000,  // 24 hours
-    },
+      maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    }
 
   },
-
-
 
   /**************************************************************************
   *                                                                          *
@@ -255,7 +242,6 @@ module.exports = {
     //   'https://staging.example.com',
     // ],
 
-
     /***************************************************************************
     *                                                                          *
     * If you are deploying a cluster of multiple servers and/or processes,     *
@@ -270,7 +256,7 @@ module.exports = {
     ***************************************************************************/
     // adapter: '@sailshq/socket.io-redis',
     // url: 'redis://user:password@bigsquid.redistogo.com:9562/databasenumber',
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
     // /\   OR, to avoid checking it in to version control, you might opt to
     // ||   set sensitive credentials like this using an environment variable.
     //
@@ -278,11 +264,9 @@ module.exports = {
     // ```
     // sails_sockets__url=redis://admin:myc00lpAssw2D@bigsquid.redistogo.com:9562/0
     // ```
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
   },
-
-
 
   /**************************************************************************
   *                                                                         *
@@ -295,8 +279,6 @@ module.exports = {
     level: 'debug'
   },
 
-
-
   http: {
 
     /***************************************************************************
@@ -308,7 +290,7 @@ module.exports = {
     * reduce this considerably to allow more flexibility in purging the cache. *
     *                                                                          *
     ***************************************************************************/
-    cache: 365.25 * 24 * 60 * 60 * 1000, // One year
+    cache: 365.25 * 24 * 60 * 60 * 1000 // One year
 
     /***************************************************************************
     *                                                                          *
@@ -329,8 +311,6 @@ module.exports = {
 
   },
 
-
-
   /**************************************************************************
   *                                                                         *
   * Lift the server on port 80.                                             *
@@ -341,8 +321,6 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   // port: 80,
-
-
 
   /**************************************************************************
   *                                                                         *
@@ -363,8 +341,6 @@ module.exports = {
   **************************************************************************/
   // ssl: undefined,
 
-
-
   /**************************************************************************
   *                                                                         *
   * Production overrides for any custom settings specific to your app.      *
@@ -375,11 +351,11 @@ module.exports = {
   ***************************************************************************/
   custom: {
     baseUrl: 'https://example.com',
-    internalEmailAddress: 'support@example.com',
+    internalEmailAddress: 'support@example.com'
 
     // sendgridSecret: 'SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU',
     // stripeSecret: 'sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm',
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
     // /\   OR, to avoid checking them in to version control, you might opt to
     // ||   set sensitive credentials like these using environment variables.
     //
@@ -388,10 +364,8 @@ module.exports = {
     // sendgridSecret=SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU
     // sails_custom__stripeSecret=sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm
     // ```
-    //--------------------------------------------------------------------------
+    // --------------------------------------------------------------------------
 
-  },
+  }
 
-
-
-};
+}

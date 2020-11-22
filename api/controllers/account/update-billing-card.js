@@ -1,11 +1,8 @@
 module.exports = {
 
-
   friendlyName: 'Update billing card',
 
-
   description: 'Update the credit card for the logged-in user.',
-
 
   inputs: {
 
@@ -45,35 +42,31 @@ module.exports = {
       example: '2023',
       description: 'Omit if removing card info.',
       whereToGet: { description: 'Credit card info is provided by Stripe after completing the checkout flow.' }
-    },
+    }
 
   },
 
-
-  fn: async function ({stripeToken, billingCardLast4, billingCardBrand, billingCardExpMonth, billingCardExpYear}) {
-
+  fn: async function ({ stripeToken, billingCardLast4, billingCardBrand, billingCardExpMonth, billingCardExpYear }) {
     // Add, update, or remove the default payment source for the logged-in user's
     // customer entry in Stripe.
-    var stripeCustomerId = await sails.helpers.stripe.saveBillingInfo.with({
+    const stripeCustomerId = await sails.helpers.stripe.saveBillingInfo.with({
       stripeCustomerId: this.req.me.stripeCustomerId,
-      token: stripeToken || '',
-    }).timeout(5000).retry();
+      token: stripeToken || ''
+    }).timeout(5000).retry()
 
     // Update (or clear) the card info we have stored for this user in our database.
     // > Remember, never store complete card numbers-- only the last 4 digits + expiration!
     // > Storing (or even receiving) complete, unencrypted card numbers would require PCI
     // > compliance in the U.S.
     await User.updateOne({ id: this.req.me.id })
-    .set({
-      stripeCustomerId,
-      hasBillingCard: stripeToken ? true : false,
-      billingCardBrand: stripeToken ? billingCardBrand : '',
-      billingCardLast4: stripeToken ? billingCardLast4 : '',
-      billingCardExpMonth: stripeToken ? billingCardExpMonth : '',
-      billingCardExpYear: stripeToken ? billingCardExpYear : ''
-    });
-
+      .set({
+        stripeCustomerId,
+        hasBillingCard: !!stripeToken,
+        billingCardBrand: stripeToken ? billingCardBrand : '',
+        billingCardLast4: stripeToken ? billingCardLast4 : '',
+        billingCardExpMonth: stripeToken ? billingCardExpMonth : '',
+        billingCardExpYear: stripeToken ? billingCardExpYear : ''
+      })
   }
 
-
-};
+}

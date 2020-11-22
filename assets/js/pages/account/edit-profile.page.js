@@ -15,24 +15,24 @@ parasails.registerPage('edit-profile', {
 
     // Form rules
     formRules: {
-      fullName: {required: true},
-      emailAddress: {required: true, isEmail: true},
+      fullName: { required: true },
+      emailAddress: { required: true, isEmail: true }
     },
 
     // Server error state for the form
-    cloudError: '',
+    cloudError: ''
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function() {
+  beforeMount: function () {
     // Set the form data.
-    this.formData.fullName = this.me.fullName;
-    this.formData.emailAddress = this.me.emailChangeCandidate ? this.me.emailChangeCandidate : this.me.emailAddress;
+    this.formData.fullName = this.me.fullName
+    this.formData.emailAddress = this.me.emailChangeCandidate ? this.me.emailChangeCandidate : this.me.emailAddress
   },
-  mounted: async function() {
-    //…
+  mounted: async function () {
+    // …
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -40,13 +40,13 @@ parasails.registerPage('edit-profile', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: async function() {
+    submittedForm: async function () {
       // Redirect to the account page on success.
       // > (Note that we re-enable the syncing state here.  This is on purpose--
       // > to make sure the spinner stays there until the page navigation finishes.)
-      this.syncing = true;
-      window.location = '/account';
-    },
+      this.syncing = true
+      window.location = '/account'
+    }
 
   }
-});
+})

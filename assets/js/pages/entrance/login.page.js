@@ -8,7 +8,7 @@ parasails.registerPage('login', {
 
     // Form data
     formData: {
-      rememberMe: true,
+      rememberMe: true
     },
 
     // For tracking client-side validation errors in our form.
@@ -19,21 +19,21 @@ parasails.registerPage('login', {
     // > The form will not be submitted if these are invalid.
     formRules: {
       emailAddress: { required: true, isEmail: true },
-      password: { required: true },
+      password: { required: true }
     },
 
     // Server error state for the form
-    cloudError: '',
+    cloudError: ''
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function() {
-    //…
+  beforeMount: function () {
+    // …
   },
-  mounted: async function() {
-    //…
+  mounted: async function () {
+    // …
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -41,13 +41,13 @@ parasails.registerPage('login', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: async function() {
+    submittedForm: async function () {
       // Redirect to the logged-in dashboard on success.
       // > (Note that we re-enable the syncing state here.  This is on purpose--
       // > to make sure the spinner stays there until the page navigation finishes.)
-      this.syncing = true;
-      window.location = '/';
-    },
+      this.syncing = true
+      window.location = '/'
+    }
 
   }
-});
+})

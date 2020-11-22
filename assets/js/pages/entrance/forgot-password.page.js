@@ -15,24 +15,24 @@ parasails.registerPage('forgot-password', {
 
     // Form rules
     formRules: {
-      emailAddress: {required: true, isEmail: true},
+      emailAddress: { required: true, isEmail: true }
     },
 
     // Server error state for the form
     cloudError: '',
 
     // Success state when form has been submitted
-    cloudSuccess: false,
+    cloudSuccess: false
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function() {
-    //…
+  beforeMount: function () {
+    // …
   },
-  mounted: async function() {
-    //…
+  mounted: async function () {
+    // …
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -40,10 +40,10 @@ parasails.registerPage('forgot-password', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: async function() {
+    submittedForm: async function () {
       // If it worked, show the success message.
-      this.cloudSuccess = true;
-    },
+      this.cloudSuccess = true
+    }
 
   }
-});
+})

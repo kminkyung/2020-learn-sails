@@ -1,12 +1,9 @@
 module.exports = {
 
-
   friendlyName: 'Update password and login',
 
-
-  description: 'Finish the password recovery flow by setting the new password and '+
+  description: 'Finish the password recovery flow by setting the new password and ' +
   'logging in the requesting user, based on the authenticity of their token.',
-
 
   inputs: {
 
@@ -24,7 +21,6 @@ module.exports = {
 
   },
 
-
   exits: {
 
     success: {
@@ -38,37 +34,33 @@ module.exports = {
 
   },
 
-
-  fn: async function ({password, token}) {
-
-    if(!token) {
-      throw 'invalidToken';
+  fn: async function ({ password, token }) {
+    if (!token) {
+      throw 'invalidToken'
     }
 
     // Look up the user with this reset token.
-    var userRecord = await User.findOne({ passwordResetToken: token });
+    const userRecord = await User.findOne({ passwordResetToken: token })
 
     // If no such user exists, or their token is expired, bail.
     if (!userRecord || userRecord.passwordResetTokenExpiresAt <= Date.now()) {
-      throw 'invalidToken';
+      throw 'invalidToken'
     }
 
     // Hash the new password.
-    var hashed = await sails.helpers.passwords.hashPassword(password);
+    const hashed = await sails.helpers.passwords.hashPassword(password)
 
     // Store the user's new password and clear their reset token so it can't be used again.
     await User.updateOne({ id: userRecord.id })
-    .set({
-      password: hashed,
-      passwordResetToken: '',
-      passwordResetTokenExpiresAt: 0
-    });
+      .set({
+        password: hashed,
+        passwordResetToken: '',
+        passwordResetTokenExpiresAt: 0
+      })
 
     // Log the user in.
     // (This will be persisted when the response is sent.)
-    this.req.session.userId = userRecord.id;
-
+    this.req.session.userId = userRecord.id
   }
 
-
-};
+}

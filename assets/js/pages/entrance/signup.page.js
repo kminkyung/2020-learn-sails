@@ -12,11 +12,11 @@ parasails.registerPage('signup', {
 
     // Form rules
     formRules: {
-      fullName: {required: true},
-      emailAddress: {required: true, isEmail: true},
-      password: {required: true},
-      confirmPassword: {required: true, sameAs: 'password'},
-      agreed: {required: true},
+      fullName: { required: true },
+      emailAddress: { required: true, isEmail: true },
+      password: { required: true },
+      confirmPassword: { required: true, sameAs: 'password' },
+      agreed: { required: true }
     },
 
     // Syncing / loading state
@@ -26,17 +26,17 @@ parasails.registerPage('signup', {
     cloudError: '',
 
     // Success state when form has been submitted
-    cloudSuccess: false,
+    cloudSuccess: false
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function() {
-    //…
+  beforeMount: function () {
+    // …
   },
-  mounted: async function() {
-    //…
+  mounted: async function () {
+    // …
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -44,19 +44,18 @@ parasails.registerPage('signup', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: async function() {
-      if(this.isEmailVerificationRequired) {
+    submittedForm: async function () {
+      if (this.isEmailVerificationRequired) {
         // If email confirmation is enabled, show the success message.
-        this.cloudSuccess = true;
-      }
-      else {
+        this.cloudSuccess = true
+      } else {
         // Otherwise, redirect to the logged-in dashboard.
         // > (Note that we re-enable the syncing state here.  This is on purpose--
         // > to make sure the spinner stays there until the page navigation finishes.)
-        this.syncing = true;
-        window.location = '/';
+        this.syncing = true
+        window.location = '/'
       }
-    },
+    }
 
   }
-});
+})

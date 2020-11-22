@@ -1,11 +1,8 @@
 module.exports = {
 
-
   friendlyName: 'Update password',
 
-
   description: 'Update the password for the logged-in user.',
-
 
   inputs: {
 
@@ -17,19 +14,15 @@ module.exports = {
 
   },
 
-
-  fn: async function ({password}) {
-
+  fn: async function ({ password }) {
     // Hash the new password.
-    var hashed = await sails.helpers.passwords.hashPassword(password);
+    const hashed = await sails.helpers.passwords.hashPassword(password)
 
     // Update the record for the logged-in user.
     await User.updateOne({ id: this.req.me.id })
-    .set({
-      password: hashed
-    });
-
+      .set({
+        password: hashed
+      })
   }
 
-
-};
+}

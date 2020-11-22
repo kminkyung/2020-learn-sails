@@ -39,8 +39,8 @@ module.exports.custom = {
   * The TTL (time-to-live) for various sorts of tokens before they expire.  *
   *                                                                         *
   **************************************************************************/
-  passwordResetTokenTTL: 24*60*60*1000,// 24 hours
-  emailProofTokenTTL:    24*60*60*1000,// 24 hours
+  passwordResetTokenTTL: 24 * 60 * 60 * 1000, // 24 hours
+  emailProofTokenTTL: 24 * 60 * 60 * 1000, // 24 hours
 
   /**************************************************************************
   *                                                                         *
@@ -48,7 +48,7 @@ module.exports.custom = {
   * if "Remember Me" was checked while logging in.                          *
   *                                                                         *
   **************************************************************************/
-  rememberMeCookieMaxAge: 30*24*60*60*1000, // 30 days
+  rememberMeCookieMaxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
 
   /**************************************************************************
   *                                                                         *
@@ -62,10 +62,10 @@ module.exports.custom = {
   *                                                                         *
   **************************************************************************/
   // sendgridSecret: 'SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU',
-  //--------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
   // /\  Configure this to enable support for automated emails.
   // ||  (Important for password recovery, verification, contact form, etc.)
-  //--------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
 
   // The sender that all outgoing emails will appear to come from.
   fromEmailAddress: 'noreply@example.com',
@@ -79,7 +79,7 @@ module.exports.custom = {
 
   // Whether to require proof of email address ownership any time a new user
   // signs up, or when an existing user attempts to change their email address.
-  verifyEmailAddresses: false,
+  verifyEmailAddresses: false
 
   /**************************************************************************
   *                                                                         *
@@ -90,10 +90,10 @@ module.exports.custom = {
   **************************************************************************/
   // stripePublishableKey: 'pk_test_Zzd814nldl91104qor5911gjald',
   // stripeSecret: 'sk_test_Zzd814nldl91104qor5911gjald',
-  //--------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
   // /\  Configure these to enable support for billing features.
   // ||  (Or if you don't need billing, feel free to remove them.)
-  //--------------------------------------------------------------------------
+  // --------------------------------------------------------------------------
 
   /***************************************************************************
   *                                                                          *
@@ -102,4 +102,4 @@ module.exports.custom = {
   ***************************************************************************/
   // …
 
-};
+}

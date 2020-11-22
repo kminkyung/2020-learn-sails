@@ -1,11 +1,8 @@
 module.exports = {
 
-
   friendlyName: 'View privacy',
 
-
   description: 'Display "Privacy policy" page.',
-
 
   exits: {
 
@@ -15,13 +12,10 @@ module.exports = {
 
   },
 
-
   fn: async function () {
 
     // All done.
-    return;
 
   }
 
-
-};
+}

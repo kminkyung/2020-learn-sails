@@ -20,6 +20,6 @@ module.exports.policies = {
   'view-contact': true,
   'legal/view-terms': true,
   'legal/view-privacy': true,
-  'deliver-contact-form-message': true,
+  'deliver-contact-form-message': true
 
-};
+}

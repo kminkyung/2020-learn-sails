@@ -1,11 +1,8 @@
 module.exports = {
 
-
   friendlyName: 'View terms',
 
-
   description: 'Display "Legal terms" page.',
-
 
   exits: {
 
@@ -15,13 +12,10 @@ module.exports = {
 
   },
 
-
   fn: async function () {
 
     // All done.
-    return;
 
   }
 
-
-};
+}

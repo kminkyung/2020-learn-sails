@@ -15,27 +15,27 @@ parasails.registerPage('contact', {
 
     // Form rules
     formRules: {
-      emailAddress: {isEmail: true, required: true},
-      fullName: {required: true},
-      topic: {required: true},
-      message: {required: true},
+      emailAddress: { isEmail: true, required: true },
+      fullName: { required: true },
+      topic: { required: true },
+      message: { required: true }
     },
 
     // Server error state for the form
     cloudError: '',
 
     // Success state when form has been submitted
-    cloudSuccess: false,
+    cloudSuccess: false
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function() {
-    //…
+  beforeMount: function () {
+    // …
   },
-  mounted: async function() {
-    //…
+  mounted: async function () {
+    // …
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -43,12 +43,10 @@ parasails.registerPage('contact', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: async function() {
-
+    submittedForm: async function () {
       // Show the success message.
-      this.cloudSuccess = true;
-
-    },
+      this.cloudSuccess = true
+    }
 
   }
-});
+})

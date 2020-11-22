@@ -15,22 +15,22 @@ parasails.registerPage('edit-password', {
 
     // Form rules
     formRules: {
-      password: {required: true},
-      confirmPassword: {required: true, sameAs: 'password'},
+      password: { required: true },
+      confirmPassword: { required: true, sameAs: 'password' }
     },
 
     // Server error state for the form
-    cloudError: '',
+    cloudError: ''
   },
 
   //  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
   //  ║  ║╠╣ ║╣ ║  ╚╦╝║  ║  ║╣
   //  ╩═╝╩╚  ╚═╝╚═╝ ╩ ╚═╝╩═╝╚═╝
-  beforeMount: function() {
-    //…
+  beforeMount: function () {
+    // …
   },
-  mounted: async function() {
-    //…
+  mounted: async function () {
+    // …
   },
 
   //  ╦╔╗╔╔╦╗╔═╗╦═╗╔═╗╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
@@ -38,13 +38,13 @@ parasails.registerPage('edit-password', {
   //  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
   methods: {
 
-    submittedForm: async function() {
+    submittedForm: async function () {
       // Redirect to a different web page on success.
       // > (Note that we re-enable the syncing state here.  This is on purpose--
       // > to make sure the spinner stays there until the page navigation finishes.)
-      this.syncing = true;
-      window.location = '/account';
-    },
+      this.syncing = true
+      window.location = '/account'
+    }
 
   }
-});
+})

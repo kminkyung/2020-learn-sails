@@ -27,15 +27,15 @@ parasails.registerComponent('cloud-error', {
   //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╩╝╚╝ ╩ ╚═╝╩╚═╝╚╝╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
   data: function () {
     return {
-      beWithoutMargins: undefined,
-    };
+      beWithoutMargins: undefined
+    }
   },
 
-  beforeMount: function() {
+  beforeMount: function () {
     if (this.withoutMargins !== undefined && typeof this.withoutMargins !== 'boolean') {
-      throw new Error('<cloud-error> received an invalid `withoutMargins`.  If provided, this prop should be precisely true or false.');
+      throw new Error('<cloud-error> received an invalid `withoutMargins`.  If provided, this prop should be precisely true or false.')
     }
-    this.beWithoutMargins = this.withoutMargins||false;
+    this.beWithoutMargins = this.withoutMargins || false
   },
 
   //  ╦ ╦╔╦╗╔╦╗╦
@@ -55,10 +55,10 @@ parasails.registerComponent('cloud-error', {
   },
 
   watch: {
-    withoutMargins: function(unused) { throw new Error('Changes to `withoutMargins` are not currently supported in <cloud-error>!'); },
+    withoutMargins: function (unused) { throw new Error('Changes to `withoutMargins` are not currently supported in <cloud-error>!') }
   },
 
-  beforeDestroy: function() {
+  beforeDestroy: function () {
 
   },
 
@@ -71,7 +71,7 @@ parasails.registerComponent('cloud-error', {
     //  ║║║║ ║ ║╣ ╠╦╝║║║╠═╣║    ║╣ ╚╗╔╝║╣ ║║║ ║   ╠═╣╠═╣║║║ ║║║  ║╣ ╠╦╝╚═╗
     //  ╩╝╚╝ ╩ ╚═╝╩╚═╝╚╝╩ ╩╩═╝  ╚═╝ ╚╝ ╚═╝╝╚╝ ╩   ╩ ╩╩ ╩╝╚╝═╩╝╩═╝╚═╝╩╚═╚═╝
 
-    //…
+    // …
 
     //  ╔═╗╦ ╦╔╗ ╦  ╦╔═╗  ╔╦╗╔═╗╔╦╗╦ ╦╔═╗╔╦╗╔═╗
     //  ╠═╝║ ║╠╩╗║  ║║    ║║║║╣  ║ ╠═╣║ ║ ║║╚═╗
@@ -86,8 +86,8 @@ parasails.registerComponent('cloud-error', {
     //  ╠═╝╠╦╝║╚╗╔╝╠═╣ ║ ║╣   ║║║║╣  ║ ╠═╣║ ║ ║║╚═╗
     //  ╩  ╩╚═╩ ╚╝ ╩ ╩ ╩ ╚═╝  ╩ ╩╚═╝ ╩ ╩ ╩╚═╝═╩╝╚═╝
 
-    //…
+    // …
 
   }
 
-});
+})

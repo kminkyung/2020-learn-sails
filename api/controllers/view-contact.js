@@ -1,11 +1,8 @@
 module.exports = {
 
-
   friendlyName: 'View contact',
 
-
   description: 'Display "Contact" page.',
-
 
   exits: {
 
@@ -15,13 +12,9 @@ module.exports = {
 
   },
 
-
   fn: async function () {
-
     // Respond with view.
-    return {};
-
+    return {}
   }
 
-
-};
+}

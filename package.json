@@ -12,14 +12,18 @@
     "sails-hook-apianalytics": "^2.0.3",
     "sails-hook-organics": "^2.0.0",
     "sails-hook-orm": "^2.1.1",
-    "sails-hook-sockets": "^2.0.0"
+    "sails-hook-sockets": "^2.0.0",
+    "sails-mysql": "1.0.1",
+    "shelljs": "^0.3.0"
   },
   "devDependencies": {
     "eslint": "5.16.0",
     "grunt": "1.0.4",
     "htmlhint": "0.11.0",
+    "husky": "^4.3.0",
     "lesshint": "6.3.6",
-    "sails-hook-grunt": "^4.0.0"
+    "sails-hook-grunt": "^4.0.0",
+    "standard": "^16.0.3"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
@@ -37,5 +41,11 @@
   "license": "",
   "engines": {
     "node": "^12.13"
+  },
+  "husky": {
+    "skipCI": true,
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
