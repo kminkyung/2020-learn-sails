@@ -43,8 +43,8 @@
     "node": "^12.13"
   },
   "husky": {
-    "skipCI": true,
     "hooks": {
+      "pre-push": "npm run test:unit",
       "pre-commit": "npm run lint"
     }
   }
