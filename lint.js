@@ -6,7 +6,7 @@ const exit = () => {
   process.exit(1)
 }
 
-const gitdiff = exec(`git diff --name-only --cached --relative`)
+const gitdiff = exec('git diff --name-only --cached --relative')
 if (gitdiff.stderr) {
   exit()
 }
